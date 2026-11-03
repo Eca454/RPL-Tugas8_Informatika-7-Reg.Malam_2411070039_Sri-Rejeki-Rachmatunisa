@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ins->bind_param("ssiis", $kode, $tipe, $jumlah, $stok_baru, $keterangan);
     $ins->execute();
 
-    header("Location: index.php?msg=Stok+berhasil+dikurangi");
+    header("Location: ../index.php?msg=Stok+berhasil+dikurangi");
     exit;
 }
 ?>
@@ -72,12 +72,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" name="keterangan" placeholder="Opsional">
             </div>
             <button type="submit" class="btn btn-warning">Simpan</button>
-            <a href="index.php" class="btn btn-danger" style="margin-left:8px">Batal</a>
+            <a href="../index.php" class="btn btn-danger" style="margin-left:8px">Batal</a>
         </form>
     </div>
     <?php else: ?>
         <div class="alert alert-danger">Barang tidak ditemukan.</div>
-        <a href="index.php" class="btn btn-primary">Kembali</a>
+        <a href="../index.php" class="btn btn-primary">Kembali</a>
     <?php endif; ?>
 </div>
 </body>

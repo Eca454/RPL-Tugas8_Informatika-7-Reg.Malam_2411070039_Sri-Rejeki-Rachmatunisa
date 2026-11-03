@@ -66,7 +66,7 @@ if ($kode) {
     <?php else: ?>
         <div class="alert alert-danger">Barang tidak ditemukan.</div>
     <?php endif; ?>
-    <a href="index.php" class="btn btn-primary">← Kembali</a>
+    <a href="../index.php" class="btn btn-primary">← Kembali</a>
 </div>
 </body>
 </html>
