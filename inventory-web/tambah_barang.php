@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare("INSERT INTO barang (kode, nama, kode_kategori, satuan, stok, harga_beli, stok_minimum) VALUES (?,?,?,?,0,?,?)");
     $stmt->bind_param("ssssdi", $kode, $nama, $kat, $satuan, $harga, $min_stok);
     $stmt->execute();
-    header("Location: index.php?msg=Barang+$nama+berhasil+ditambahkan");
+    header("Location: ../index.php?msg=Barang+$nama+berhasil+ditambahkan");
     exit;
 }
 
@@ -74,7 +74,7 @@ $kategori = $conn->query("SELECT * FROM kategori");
                 <input type="number" name="stok_minimum" min="0" value="5" required>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="index.php" class="btn btn-danger" style="margin-left:8px">Batal</a>
+            <a href="../index.php" class="btn btn-danger" style="margin-left:8px">Batal</a>
         </form>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require 'inventory-web/config.php';
 
 // Ambil semua barang beserta nama kategori
 $sql = "SELECT b.*, k.nama AS nama_kategori
@@ -18,10 +18,10 @@ $habis     = $conn->query("SELECT COUNT(*) AS n FROM barang WHERE stok = 0")->fe
 <head>
     <meta charset="UTF-8">
     <title>Inventory Gudang</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inventory-web/style.css">
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<?php include 'inventory-web/navbar.php'; ?>
 <div class="container">
     <h2>Daftar Barang</h2>
 
@@ -54,7 +54,7 @@ $habis     = $conn->query("SELECT COUNT(*) AS n FROM barang WHERE stok = 0")->fe
 
     <div class="card">
         <div style="display:flex;justify-content:flex-end;margin-bottom:14px">
-            <a href="tambah_barang.php" class="btn btn-primary">+ Tambah Barang</a>
+            <a href="inventory-web/tambah_barang.php" class="btn btn-primary">+ Tambah Barang</a>
         </div>
         <table>
             <thead>
@@ -88,10 +88,10 @@ $habis     = $conn->query("SELECT COUNT(*) AS n FROM barang WHERE stok = 0")->fe
                     <td>Rp <?= number_format($b['harga_beli'], 0, ',', '.') ?></td>
                     <td><span class="badge <?= $badge ?>"><?= $status ?></span></td>
                     <td>
-                        <a href="barang_masuk.php?kode=<?= $b['kode'] ?>" class="btn btn-success btn-sm">Masuk</a>
-                        <a href="barang_keluar.php?kode=<?= $b['kode'] ?>" class="btn btn-warning btn-sm">Keluar</a>
-                        <a href="riwayat.php?kode=<?= $b['kode'] ?>" class="btn btn-primary btn-sm">Riwayat</a>
-                        <a href="hapus_barang.php?kode=<?= $b['kode'] ?>"
+                        <a href="inventory-web/barang_masuk.php?kode=<?= $b['kode'] ?>" class="btn btn-success btn-sm">Masuk</a>
+                        <a href="inventory-web/barang_keluar.php?kode=<?= $b['kode'] ?>" class="btn btn-warning btn-sm">Keluar</a>
+                        <a href="inventory-web/riwayat.php?kode=<?= $b['kode'] ?>" class="btn btn-primary btn-sm">Riwayat</a>
+                        <a href="inventory-web/hapus_barang.php?kode=<?= $b['kode'] ?>"
                            class="btn btn-danger btn-sm"
                            onclick="return confirm('Hapus barang <?= htmlspecialchars($b['nama'], ENT_QUOTES) ?>?')">Hapus</a>
                     </td>
